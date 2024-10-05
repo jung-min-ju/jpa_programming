@@ -23,17 +23,17 @@ public class Chap6_MTM_Member {
 //               inverseJoinColumns = @JoinColumn(name="product_id"))
 //    private List<Chap6_MTM_PRODUCT> products = new ArrayList<>();
 
-
-    //여기까진 중간엔티티 미사용
-    // ----------------------------------
-    //여기서부턴 중간엔티티 사용
-
     @OneToMany(mappedBy = "member")
     private List<Chap6_MTM_MemberProduct> memberProducts = new ArrayList<>();
 
-    public void addProducts(Chap6_MTM_PRODUCT product){
-        //products.add(product);
-        product.getMembers().add(this);
-    }
+//    public void addProducts(Chap6_MTM_PRODUCT product){
+//        //products.add(product);
+//        product.getMembers().add(this);
+//    }
+
+    //중간엔티티 미사용 -> 주석해제
+    // ----------------------------------
+    //중간엔티티 사용 -> 주석처리
+
 
 }
