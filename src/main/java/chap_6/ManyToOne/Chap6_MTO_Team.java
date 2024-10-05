@@ -15,5 +15,4 @@ public class Chap6_MTO_Team {
     private Long id;
 
     private String name;
-
 }
