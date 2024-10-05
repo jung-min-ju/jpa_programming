@@ -1,12 +1,10 @@
 package example.chap_6.ManyToMany;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
+@IdClass(Chap6_MTM_MemberProductId.class)
 @Data
 public class Chap6_MTM_MemberProduct {
 
