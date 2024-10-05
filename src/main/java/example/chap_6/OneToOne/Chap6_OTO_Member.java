@@ -1,8 +1,10 @@
 package example.chap_6.OneToOne;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
+@Data
 public class Chap6_OTO_Member { //주테이블
 
     @Id
