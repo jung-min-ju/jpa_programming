@@ -1,11 +1,11 @@
-package chap_6.OneToOne;
+package example.chap_6.ManyToOne;
 
 import example.JpaApplication;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.transaction.annotation.Transactional;
+
+
 
 @SpringBootTest(classes = JpaApplication.class)
-@Transactional
-class Chap6_OTO_Test {
+class Chap6_MTO_Test {
 
 }

@@ -1,4 +1,4 @@
-package chap_6.OneToMany;
+package example.chap_6.OneToMany;
 
 import example.JpaApplication;
 import example.chap_6.OneToMany.Chap6_OTM_Member;
