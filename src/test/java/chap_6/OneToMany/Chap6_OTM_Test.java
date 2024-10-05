@@ -1,22 +1,25 @@
 package chap_6.OneToMany;
 
+import example.JpaApplication;
+import example.chap_6.OneToMany.Chap6_OTM_Member;
+import example.chap_6.OneToMany.Chap6_OTM_Team;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Persistence;
+import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest(classes = JpaApplication.class)
+@Transactional
 class Chap6_OTM_Test {
+
+    @PersistenceContext
+    private EntityManager em;
+
     @Test
     public void testSave() {
-        // EntityManager와 트랜잭션 초기화
-        EntityManager em = Persistence.createEntityManagerFactory("chap6").createEntityManager();
-        EntityTransaction transaction = em.getTransaction();
-
+        // 트랜잭션 시작 (Spring의 @Transactional 덕분에 트랜잭션이 자동으로 관리됨)
         try {
-            transaction.begin(); // 트랜잭션 시작
-
             // Member 엔티티 생성
             Chap6_OTM_Member member1 = new Chap6_OTM_Member();
             member1.setUsername("member1");
@@ -37,12 +40,10 @@ class Chap6_OTM_Test {
             em.persist(member2); // INSERT member2
             em.persist(team1);   // INSERT team1, UPDATE member1.fk, UPDATE member2.fk
 
-            transaction.commit(); // 트랜잭션 커밋
+            // 트랜잭션 커밋은 @Transactional에 의해 자동으로 처리됨
         } catch (Exception e) {
-            transaction.rollback(); // 오류 발생 시 롤백
             e.printStackTrace();
-        } finally {
-            em.close(); // EntityManager 종료
+            throw new RuntimeException(e);  // 예외 발생 시 트랜잭션 롤백
         }
     }
 }
