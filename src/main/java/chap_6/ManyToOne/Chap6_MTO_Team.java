@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 public class Chap6_MTO_Team {
 
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "TEAM_ID")
     private Long id;
 
