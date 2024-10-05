@@ -16,4 +16,6 @@ public class Chap6_MTO_Member {
     @ManyToOne
     @JoinColumn(name="TEAM_ID")
     private Chap6_MTO_Team team;
+
+
 }
