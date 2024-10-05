@@ -1,4 +1,4 @@
-package chap_6.ManyToOne;
+package example.chap_6.ManyToOne;
 
 import jakarta.persistence.*;
 import lombok.Getter;

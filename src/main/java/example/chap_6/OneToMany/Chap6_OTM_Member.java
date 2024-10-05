@@ -1,14 +1,15 @@
-package chap_6.OneToMany;
+package example.chap_6.OneToMany;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
+@Table(name = "chap6_otm_member")
 @Data
 public class Chap6_OTM_Member {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "MEMBER_ID")
+    @Column(name = "member_id")
     private Long id;
 
     private String username;
@@ -18,7 +19,7 @@ public class Chap6_OTM_Member {
     //여기서부턴 양방향 설정
 
     @ManyToOne
-    @JoinColumn(name="TEAM_ID")
+    @JoinColumn(name="team_id")
     private Chap6_OTM_Team team; //"다대일" 관계이기에 외래키 관리를 "다"에서 한다.
 
 //    public void setTeam(Chap6_OTM_Team team){
