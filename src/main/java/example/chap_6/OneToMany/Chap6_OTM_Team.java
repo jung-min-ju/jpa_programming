@@ -18,8 +18,9 @@ public class Chap6_OTM_Team {
 
     private String name;
 
-    @OneToMany(mappedBy = "team")
-    //@JoinColumn(name="TEAM_ID", insertable = false, updatable = false) //MEMBER의 테이블의 TEAM_ID (FK) ->
+    @OneToMany
+    @JoinColumn(name="TEAM_ID")
+    //JoinColumn(name="TEAM_ID", insertable = false, updatable = false) //MEMBER의 테이블의 TEAM_ID (FK) ->
     private List<Chap6_OTM_Member> members = new ArrayList<>();
     //"일대다"의 단방향 : 팀 -> 회원들 참조 0 / 회원 -> 팀을 참조
     //여기까진 단방향 설정
