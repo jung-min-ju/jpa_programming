@@ -18,9 +18,9 @@ public class Chap6_OTM_Member {
     // ----------------------------------
     //여기서부턴 양방향 설정
 
-    @ManyToOne
-    @JoinColumn(name="team_id")
-    private Chap6_OTM_Team team; //"다대일" 관계이기에 외래키 관리를 "다"에서 한다.
+//    @ManyToOne
+//    @JoinColumn(name="team_id")
+//    private Chap6_OTM_Team team; //"다대일" 관계이기에 외래키 관리를 "다"에서 한다.
 
 //    public void setTeam(Chap6_OTM_Team team){
 //        this.team = team;
