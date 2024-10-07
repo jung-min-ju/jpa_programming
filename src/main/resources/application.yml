@@ -20,4 +20,3 @@ logging:
     spring: debug
     org:
       springframework: DEBUG
-      #springframework: INFO
