@@ -40,6 +40,14 @@ dependencies {
 
     // 환경변수
     implementation 'io.github.cdimascio:java-dotenv:5.2.2'
+
+    //test
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' //테스트를 위한 라이브러리입니다. 통합 테스트, 단위 테스트, 보안 테스트 등을 지원
+    testImplementation 'org.springframework.security:spring-security-test'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools' //개발자 생산성을 높이기 위해 제공되는 Spring Boot의 개발 도구 모음
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher' // JUnit 5 테스트 플랫폼의 런처를 포함하는 의존성 선언
+    implementation 'org.springframework.boot:spring-boot-starter-validation' //Spring Boot의 스타터 중 하나로, 프로젝트에 데이터 유효성 검사를 위한 필요한 라이브러리를 포함
+
 }
 
 tasks.named('test') {
