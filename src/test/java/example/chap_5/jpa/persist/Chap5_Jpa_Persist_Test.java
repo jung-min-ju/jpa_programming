@@ -20,12 +20,14 @@ class Chap5_Jpa_Persist_Test {
     public void testSave() {
 
         //팀1 저장
+        System.out.println("팀1 저장");
         Chap5_Jpa_Team team1 = new Chap5_Jpa_Team();
         team1.setId("team1");
         team1.setName("팀1");
         em.persist(team1);
 
         //회원1 저장
+        System.out.println("회원1 저장");
         Chap5_Jpa_Member member1 = new Chap5_Jpa_Member();
         member1.setId("member1");
         member1.setUsername("멤버1");
@@ -33,6 +35,7 @@ class Chap5_Jpa_Persist_Test {
         em.persist(member1);
 
         //회원2 저장
+        System.out.println("회원2 저장");
         Chap5_Jpa_Member member2 = new Chap5_Jpa_Member();
         member2.setId("member2");
         member2.setUsername("멤버2");
