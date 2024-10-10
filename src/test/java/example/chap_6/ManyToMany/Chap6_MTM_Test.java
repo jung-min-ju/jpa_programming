@@ -1,13 +1,13 @@
 package example.chap_6.ManyToMany;
 
 import example.JpaApplication;
+import example.chap_6.ManyToMany.identifying.Chap6_MTM_Member_IDEN;
+import example.chap_6.ManyToMany.identifying.Chap6_MTM_PRODUCT_IDEN;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @SpringBootTest(classes = JpaApplication.class)
 @Transactional
@@ -21,14 +21,14 @@ class Chap6_MTM_Test {
         try {
             // 상품A 생성 및 저장
             System.out.println("상품A 생성 및 저장");
-            Chap6_MTM_PRODUCT productA = new Chap6_MTM_PRODUCT();
+            Chap6_MTM_PRODUCT_IDEN productA = new Chap6_MTM_PRODUCT_IDEN();
             productA.setId("productA");
             productA.setName("상품A");
             em.persist(productA);
 
             // 회원1 생성 및 저장
             System.out.println("회원1 생성 및 저장");
-            Chap6_MTM_Member member1 = new Chap6_MTM_Member();
+            Chap6_MTM_Member_IDEN member1 = new Chap6_MTM_Member_IDEN();
             member1.setId("member1");
             member1.setUsername("회원1");
 //            member1.addProducts(productA); //양방향 편의 메서드 사용
@@ -39,7 +39,7 @@ class Chap6_MTM_Test {
 
             System.out.println("회원1 재조회 (정방향 조회)");
             // 회원1을 다시 조회하고 연관된 상품 조회 (정방향)
-            Chap6_MTM_Member foundMember = em.find(Chap6_MTM_Member.class, "member1");
+            Chap6_MTM_Member_IDEN foundMember = em.find(Chap6_MTM_Member_IDEN.class, "member1");
            //List<Chap6_MTM_PRODUCT> products = foundMember.getProducts();
 
 //            System.out.println("회원1과 연관된 상품 (정방향 조회)");
