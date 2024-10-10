@@ -1,14 +1,12 @@
-package example.chap_6.ManyToMany;
+package example.chap_6.ManyToMany.identifying;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Data
-public class Chap6_MTM_PRODUCT {
+@Table(name = "Chap6_MTM_PRODUCT_IDEN")
+public class Chap6_MTM_PRODUCT_IDEN {
 
     @Id
     @Column(name="product_id")

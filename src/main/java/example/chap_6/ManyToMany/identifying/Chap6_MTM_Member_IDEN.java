@@ -1,6 +1,5 @@
-package example.chap_6.ManyToMany;
+package example.chap_6.ManyToMany.identifying;
 
-import example.chap_6.OneToOne.Chap6_OTO_Locker;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -9,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-public class Chap6_MTM_Member {
+public class Chap6_MTM_Member_IDEN {
 
     @Id
     @Column(name="member_id")
@@ -24,7 +23,7 @@ public class Chap6_MTM_Member {
 //    private List<Chap6_MTM_PRODUCT> products = new ArrayList<>();
 
     @OneToMany(mappedBy = "member")
-    private List<Chap6_MTM_MemberProduct> memberProducts = new ArrayList<>();
+    private List<Chap6_MTM_MemberProduct_IDEN> memberProducts = new ArrayList<>();
 
 //    public void addProducts(Chap6_MTM_PRODUCT product){
 //        //products.add(product);
