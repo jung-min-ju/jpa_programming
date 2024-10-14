@@ -1,11 +1,13 @@
 package example.chap_7.InheritanceMapping.join;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @DiscriminatorColumn(name = "DTYPE")
-public class Chap7_InheritanceMapping_Item {
+@Data
+public class Chap7_IM_JOIN_Item {
 
     @Id
     @GeneratedValue
